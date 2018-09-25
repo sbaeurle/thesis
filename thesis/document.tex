@@ -23,7 +23,7 @@
 
 \begin{document}
 
-	\newcounter{savepage}
+	\newcounter{save}
 
     \begin{titlepage}
 		\begin{minipage}{6in}
@@ -59,45 +59,41 @@
             \end{tabbing}
         \end{spacing}
     \end{titlepage}
+    \newpage
     
     \pagenumbering{Roman}
 
+	% Hint: Can be removed if no lock flag is needed.
+	\input{../shared/lock_flag}
 	\newpage
-	\pagestyle{empty}
 
-    \vspace*{5cm} 
-    \begin{center}
-        \textbf{Declaration of originality}
-    \end{center}
-
-    I confirm that this assignment is my own work and that I have not sought or used inadmissible help of third parties to produce this work and that I have clearly referenced all sources used in the work.\\[5mm]
-    This work has not yet been submitted to another examination institution neither in the same nor in a similar way and has not yet been published.\\[1cm]
-
-    \begin{tabular}{ p{3cm}p{3cm}p{1cm}p{5cm} }
-        \hrulefill & \hrulefill & & \hrulefill\\
-        Place & Date & & Signature\\
-    \end{tabular}
-
+	\input{../shared/declaration_of_independence}
 	\newpage
-	\pagestyle{plain}
-
-    \vspace*{5cm} 
-    \begin{center}
-        \textbf{Abstract}
-    \end{center}
-
-    %\varabstract
-
+    
+	\input{content/abstract}
     \newpage
 
     \tableofcontents
-
     \newpage
+    
+    \cleardoublepage
+    \listoffigures
+    
+    \cleardoublepage
+    \listoftables
+    
+    \cleardoublepage
+	\lstlistoflistings
+    
+	\setcounter{save}{\arabic{page}}
+	\pagenumbering{arabic}    
+    \pagestyle{headings}
 
-    \input{body}
+    \input{content/body}
 
-    \newpage
-
+	\setcounter{page}{\thesave}
+    
+    \cleardoublepage
     \bibliographystyle{apalike}
     \bibliography{literature}
 

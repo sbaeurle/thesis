@@ -21,7 +21,7 @@ echo "Content directory: $CONTENTDIR"
 cd $TEMPLATE
 ./make.sh
 if [ -f document.pdf ]; then
-    mv document.pdf "$CONTENTDIR/$TEMPLATE.pdf"
+    mv document.pdf "$CONTENTDIR/$TEMPLATE.pdf" -f
 fi
 
 # cleanup
