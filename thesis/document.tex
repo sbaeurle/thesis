@@ -23,6 +23,8 @@
 
 \begin{document}
 
+	\newcounter{savepage}
+
     \begin{titlepage}
 		\begin{minipage}{6in}
 			\centering
@@ -33,26 +35,30 @@
 		
         \vspace*{3cm}
         \begin{center}
-            \begin{minipage}{.7\textwidth}
-                \centering
-                \textbf{\vartitle}\\[2cm]
-                \textit{\LARGE Studienarbeit}\\
-                (Student Research Project)\\[2cm]
-                at the Center for Advanced Studies Heilbronn\\
-                of the Cooperative State University Baden-Württemberg\\
-            \end{minipage}
+			\textbf{\vartitle}\\[2cm]
+            \textit{\vartype}\\[2cm]
+            für die Prüfung zum\\
+            \textbf{\vargraduation}\\[5mm]
+            des Studiengangs \varcourseofstudies\\
+            an der \varuniversity\\[2cm]
+            von\\
+           	\large \textbf{\varname}\\
         \end{center}
         \vfill
         \begin{spacing}{1.2}
-            \begin{tabular}{ p{.4\textwidth} l }
-                \textbf{Author}               & \varname\\
-                \textbf{Matriculation Number} & \varmatriculation\\
-                \textbf{Cooperative Partner}  & \varmatriculation\\
-                \textbf{Supervisor}           & \varsupervisor\\
-                \textbf{Submission Date}      & \today{}\\
-            \end{tabular}
+            \begin{tabbing}
+            	Defines the tabbing length, not displayed!	\= \kill
+            	\textbf{Bearbeitungszeitraum} 				\> \vartimespan\\
+                \textbf{Matrikelnummer, Kurs} 				\> \varmatriculation, \varcourse\\
+                \textbf{Ausbildungsfirma}  	  				\> \varcompany, \varcompanylocation\\
+                \textbf{Betreuer}           				\> \varsupervisor\\
+                \textbf{Gutachter}		      				\> \varexpert\\
+                \textbf{Abgabedatum}						\> \vardate\\
+            \end{tabbing}
         \end{spacing}
     \end{titlepage}
+    
+    \pagenumbering{Roman}
 
 	\newpage
 	\pagestyle{empty}
@@ -78,7 +84,7 @@
         \textbf{Abstract}
     \end{center}
 
-    \varabstract
+    %\varabstract
 
     \newpage
 
@@ -86,7 +92,7 @@
 
     \newpage
 
-    \input{body}
+    \input{../content/body}
 
     \newpage
 
