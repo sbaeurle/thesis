@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 
 WRKDIR=`pwd`
 if [ -z "$2" ]; then
-    CONTENTDIR="$WRKDIR/sample-content"
+    CONTENTDIR="$WRKDIR"
 else
     CONTENTDIR=$2
 fi
