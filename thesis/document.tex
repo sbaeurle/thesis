@@ -3,17 +3,34 @@
 	oneside,
 	12pt,
 	parskip=half,
+	headheight = 12pt,
+	headsepline,
+	footheight = 16pt,
+	footsepline,	
+	DIV=calc,
+	BCOR=8mm,
+	headinclude=false,
+	footinclude=false,
+	listof=totoc,
+	toc=bibliography
 ]{scrreprt}
 
 \input{../packages}
 \usepackage[english]{babel}
 
+\input{../person}
 \input{config}
 
 \begin{document}
 
     \begin{titlepage}
-        \includegraphics[width=\textwidth]{../header.png}
+		\begin{minipage}{6in}
+			\centering
+			\raisebox{-0.5\height}{\includegraphics[width=6cm,keepaspectratio]{logo}}
+			\hspace*{3cm}
+			\raisebox{-0.5\height}{\includegraphics[height=2.5cm]{dhbw}}
+		\end{minipage}
+		
         \vspace*{3cm}
         \begin{center}
             \begin{minipage}{.7\textwidth}
@@ -28,9 +45,9 @@
         \vfill
         \begin{spacing}{1.2}
             \begin{tabular}{ p{.4\textwidth} l }
-                \textbf{Author}               & Ernesto Elsäßer\\
-                \textbf{Matriculation Number} & 2016242\\
-                \textbf{Cooperative Partner}  & moovel Group GmbH, Stuttgart\\
+                \textbf{Author}               & \varname\\
+                \textbf{Matriculation Number} & \varmatriculation\\
+                \textbf{Cooperative Partner}  & \varmatriculation\\
                 \textbf{Supervisor}           & \varsupervisor\\
                 \textbf{Submission Date}      & \today{}\\
             \end{tabular}
