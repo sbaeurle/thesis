@@ -1,27 +1,28 @@
 #!/bin/sh
 
 # $1 - template name
-# $2 - content directory (optional)
+# $2 - version (optional)
 
 cd "$(dirname "$0")"
 
 WRKDIR=`pwd`
-if [ -z "$2" ]; then
-    CONTENTDIR="$WRKDIR"
-else
-    CONTENTDIR=$2
-fi
+
 TEMPLATE=$1
+VERSION=$2
 
-export TEXINPUTS="$CONTENTDIR:$TEXINPUTS"
-export BIBINPUTS="$CONTENTDIR:$BIBINPUTS"
+export TEXINPUTS="$WRKDIR:$TEXINPUTS"
+export BIBINPUTS="$WRKDIR:$BIBINPUTS"
 
-echo "Content directory: $CONTENTDIR"
+echo "Directory: $WRKDIR"
 
 cd $TEMPLATE
 ./make.sh
 if [ -f document.pdf ]; then
-    mv document.pdf "$CONTENTDIR/$TEMPLATE.pdf" -f
+	if [ -z "$VERSION"]; then
+		mv document.pdf "$WRKDIR/$TEMPLATE.pdf"
+	else
+		mv document.pdf "$WRKDIR/$TEMPLATE-$VERSION.pdf" -f
+	fi     
 fi
 
 # cleanup
@@ -30,3 +31,5 @@ rm -f document.bbl
 rm -f document.blg
 rm -f document.toc
 rm -f document.log
+rm -f document.lof
+rm -f document.lot

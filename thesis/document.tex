@@ -16,7 +16,7 @@
 ]{scrreprt}
 
 \input{../packages}
-\usepackage[english]{babel}
+\usepackage[german]{babel}
 
 \input{../person}
 \input{config}
@@ -63,7 +63,7 @@
     
     \pagenumbering{Roman}
 
-	% Hint: Can be removed if no lock flag is needed.
+	% Hint: To be removed if no lock flag is needed.
 	\input{../shared/lock_flag}
 	\newpage
 
@@ -72,28 +72,33 @@
     
 	\input{content/abstract}
     \newpage
-
+	
+	\RedeclareSectionCommand[beforeskip=20pt]{chapter}	
+	
     \tableofcontents
-    \newpage
-    
     \cleardoublepage
+    
     \listoffigures
-    
     \cleardoublepage
+    
     \listoftables
-    
     \cleardoublepage
-	\lstlistoflistings
+    
+    % enable if you use code listings
+	%\lstlistoflistings
+	%\cleardoublepage
     
 	\setcounter{save}{\arabic{page}}
+	
 	\pagenumbering{arabic}    
+	
     \pagestyle{headings}
 
     \input{content/body}
-
-	\setcounter{page}{\thesave}
+    \clearpage
     
-    \cleardoublepage
+    \pagenumbering{Roman}
+    \setcounter{page}{\thesave}
     \bibliographystyle{apalike}
     \bibliography{literature}
 
