@@ -63,8 +63,8 @@
 }
 
 % basic json declaration
-\colorlet{numbers}{magenta!80!black}
-\colorlet{punctuation}{red!80!black}
+\colorlet{numbers}{magenta!60!black}
+\colorlet{highlight}{red!80!black}
 
 \lstdefinelanguage{json}{
 	keywords={true,false,null},
@@ -81,8 +81,8 @@
       {7}{{{\color{numbers}7}}}{1}
       {8}{{{\color{numbers}8}}}{1}
       {9}{{{\color{numbers}9}}}{1}
-      {:}{{{\color{punctuation}{:}}}}{1}
-      {,}{{{\color{punctuation}{,}}}}{1},
+      {:}{{{\color{highlight}{:}}}}{1}
+      {,}{{{\color{highlight}{,}}}}{1},
 }
 
 % basic yaml declaration
@@ -93,11 +93,11 @@
   morecomment=[s]{/*}{*/},
   moredelim=[l][\color{orange}]{\&},
   moredelim=[l][\color{magenta}]{*},
-  moredelim=**[il][\color{red}\mdseries{:}\normalfont\ttfamily]{:},   % switch to value style at :
+  moredelim=**[il][\color{highlight}\mdseries{:}\color{lst-string}]{:},   % switch to value style at :
   morestring=[b]',
   morestring=[b]",
-  literate =    {---}{{\ProcessThreeDashes}}3
-                {>}{{\textcolor{red}\textgreater}}1     
-                {|}{{\textcolor{red}\textbar}}1 
-                {\ -\ }{{\mdseries\ -\ }}3,
+  literate =
+    {>}{{\textcolor{highlight}\textgreater}}{1}     
+    {|}{{\textcolor{highlight}\textbar}}{1}
+    {\ -\ }{{\mdseries\ -\ }}{3},
 }
