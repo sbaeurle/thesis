@@ -16,6 +16,7 @@
 ]{scrreprt}
 
 \input{../packages}
+
 \usepackage[german]{babel}
 
 \input{../person}
@@ -75,7 +76,7 @@
 	
 	\RedeclareSectionCommand[beforeskip=20pt]{chapter}	
 	
-    \tableofcontents
+    \pdfbookmark{Inhaltsverzeichnis}{toc}\tableofcontents
     \cleardoublepage
     
     \listoffigures
@@ -99,8 +100,8 @@
     
     \pagenumbering{Roman}
     \setcounter{page}{\thesave}
-    \bibliographystyle{apalike}
-    \bibliography{literature}
+    
+    \printbibliography
 
 	\clearpage
 	
