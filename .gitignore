@@ -1,4 +1,5 @@
 *.log
 *.pdf
 *.bak
+*/out
 .DS_Store

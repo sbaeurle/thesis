@@ -1,0 +1,14 @@
+$aux_dir = './out';
+
+@default_files = ('document.tex');
+$do_cd = 1;
+
+$pdf_mode = 1;
+$pdflatex = 'pdflatex -interaction nonstopmode %B';
+
+$biber = 'biber %B';
+$bibtex_use = 2;
+
+$cleanup_mode = 2;
+
+@generated_exts [( aux , bbl , idx , ind , lof , lot , out , toc)];
