@@ -33,3 +33,6 @@ rm -f document.toc
 rm -f document.log
 rm -f document.lof
 rm -f document.lot
+rm -f document.out
+rm -f document.bcf
+rm -f document.run.*

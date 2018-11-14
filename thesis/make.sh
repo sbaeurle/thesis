@@ -1,5 +1,5 @@
 #!/bin/sh
 pdflatex -interaction nonstopmode document
-bibtex document
+biber document
 pdflatex -interaction nonstopmode document
 pdflatex -interaction nonstopmode document
