@@ -13,10 +13,10 @@ VERSION=$2
 # build document
 echo "Building Latex File: $WRKDIR/document.tex"
 
-sudo pdflatex -interaction nonstopmode document -release
-sudo biber document -release
-sudo pdflatex -interaction nonstopmode document -release
-sudo pdflatex -interaction nonstopmode document -release
+pdflatex -interaction nonstopmode document
+biber document -release
+pdflatex -interaction nonstopmode document
+pdflatex -interaction nonstopmode document
 
 # rename document
 if [ -f document.pdf -a $NAME]; then
