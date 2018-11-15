@@ -1,0 +1,3 @@
+[submodule "shared-latex"]
+	path = shared-latex
+	url = https://gitlab.com/sbaeurle/shared-latex.git
