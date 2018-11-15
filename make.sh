@@ -1,27 +1,29 @@
 #!/bin/sh
 
-# $1 - template name
+# $1 - output file name (optinal)
 # $2 - version (optional)
 
 cd "$(dirname "$0")"
 
 WRKDIR=`pwd`
 
-TEMPLATE=$1
+NAME=$1
 VERSION=$2
 
-export TEXINPUTS="$WRKDIR:$TEXINPUTS"
-export BIBINPUTS="$WRKDIR:$BIBINPUTS"
+# build document
+echo "Building Latex File: $WRKDIR/document.tex"
 
-echo "Directory: $WRKDIR"
+sudo pdflatex -interaction nonstopmode document -release
+sudo biber document -release
+sudo pdflatex -interaction nonstopmode document -release
+sudo pdflatex -interaction nonstopmode document -release
 
-cd $TEMPLATE
-./make.sh
-if [ -f document.pdf ]; then
+# rename document
+if [ -f document.pdf -a $NAME]; then
 	if [ -z "$VERSION"]; then
-		mv document.pdf "$WRKDIR/$TEMPLATE.pdf"
+		mv document.pdf "$NAME.pdf"
 	else
-		mv document.pdf "$WRKDIR/$TEMPLATE-$VERSION.pdf" -f
+		mv document.pdf "$NAME-$VERSION.pdf" -f
 	fi     
 fi
 
