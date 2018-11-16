@@ -49,7 +49,6 @@ The project can build using the `make.sh` script provided in the repo:
 
 * `content/` - content of the project
 * `images/` - images of the project
-* `out/` - build folder for latexmk
 * `shared-latex/` - submodule containing shared latex files across multiple repositories
 * `.latexmkrc` - latexmk build definition
 * `config.tex` - config file for document
