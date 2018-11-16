@@ -1,5 +1,15 @@
-*.log
-*.pdf
+# all possible temporary files
+*.aux
 *.bak
-out/
-.DS_Store
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.pdf
+*.run.xml
+*.toc

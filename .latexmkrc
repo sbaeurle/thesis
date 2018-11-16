@@ -1,12 +1,11 @@
-$aux_dir = './out';
-$out_dir = './out';
-
 @default_files = ('document.tex');
 
 $pdf_mode = 1;
-$pdflatex = 'pdflatex -interaction nonstopmode %B';
+$dvi_mode = 0;
+$ps_mode = 0;
 
-$biber = 'biber %B';
+$recorder = 1;
+
 $bibtex_use = 2;
 
 $cleanup_mode = 2;
