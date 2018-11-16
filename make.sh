@@ -32,7 +32,6 @@ rm -f document.aux
 rm -f document.bbl
 rm -f document.blg
 rm -f document.toc
-rm -f document.log
 rm -f document.lof
 rm -f document.lot
 rm -f document.out
