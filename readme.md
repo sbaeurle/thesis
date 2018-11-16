@@ -12,7 +12,11 @@ Clone the repository using `git clone --recurse-submodules` ensuring the submodu
 
 ## How to build
 
+### Using latexmk
+
 You can build this project using `latexmk` by executing `latexmk -pdf` or any other latexmk build command.
+
+### Without latexmk
 
 Otherwise the project can be build using the `make.sh` script provided in the repository.
 The script accepts the following optional arguments:
@@ -21,3 +25,15 @@ The script accepts the following optional arguments:
 * `$2 desired version tag`
 
 Executing the script will result in either `document.pdf` or `$1-$2.pdf`.
+
+## General Structure
+
+* `content/` - content of the project
+* `images/` - images of the project
+* `out/` - build folder for latexmk
+* `shared-latex/` - submodule containing shared latex files across multiple repositories
+* `.latexmkrc` - latexmk build definition
+* `config.tex` - config file for document
+* `document.tex` - main file including all other tex files
+* `literature.bib` - bibliography
+* `make.sh` - build script
