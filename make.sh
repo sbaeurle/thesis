@@ -14,7 +14,7 @@ VERSION=$2
 echo "Building Latex File: $WRKDIR/document.tex"
 
 pdflatex -interaction nonstopmode document
-biber document -release
+biber document
 pdflatex -interaction nonstopmode document
 pdflatex -interaction nonstopmode document
 

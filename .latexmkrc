@@ -1,4 +1,5 @@
 $aux_dir = './out';
+$out_dir = './out';
 
 @default_files = ('document.tex');
 
