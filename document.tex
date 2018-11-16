@@ -15,60 +15,27 @@
 	toc=bibliography
 ]{scrreprt}
 
-\input{../shared-latex/packages}
+\input{shared-latex/packages}
 
 \usepackage[german]{babel}
 
-\input{../shared-latex/person}
+\input{shared-latex/person}
 \input{config}
 
 \begin{document}
 
 	\newcounter{save}
 
-    \begin{titlepage}
-		\begin{minipage}{6in}
-			\centering
-			\raisebox{-0.5\height}{\includegraphics[width=6cm,keepaspectratio]{logo}}
-			\hspace*{3cm}
-			\raisebox{-0.5\height}{\includegraphics[height=2.5cm]{dhbw}}
-		\end{minipage}
-		
-		\vspace*{3cm}
-
-        \enlargethispage{20mm}
-        \begin{center}
-			\textbf{\vartitle}\\[16mm]
-            \textit{\vartype}\\[16mm]
-            für die Prüfung zum\\
-            \textbf{\vargraduation}\\[4mm]
-            des Studiengangs \varcourseofstudies\\
-            an der \varuniversity\\[16mm]
-            von\\
-           	{\large \textbf{\varname}}\\
-        \end{center}
-        \vfill
-        \begin{spacing}{1.2}
-            \begin{tabbing}
-            	Defines the tabbing length, not displayed!	\= \kill
-            	\textbf{Bearbeitungszeitraum} 				\> \vartimespan\\
-                \textbf{Matrikelnummer, Kurs} 				\> \varmatriculation, \varcourse\\
-                \textbf{Ausbildungsfirma}  	  				\> \varcompany, \varcompanylocation\\
-                \textbf{Betreuer}           				\> \varsupervisor\\
-                \textbf{Gutachter}		      				\> \varexpert\\
-                \textbf{Abgabedatum}						\> \vardate\\
-            \end{tabbing}
-        \end{spacing}
-    \end{titlepage}
+    \input{content/title_page.tex}
     \newpage
     
     \pagenumbering{Roman}
 
 	% Hint: To be removed if no lock flag is needed.
-	\input{../shared-latex/lock_flag}
+	\input{shared-latex/lock_flag}
 	\newpage
 
-	\input{../shared-latex/declaration_of_independence}
+	\input{shared-latex/declaration_of_independence}
 	\newpage
     
 	\input{content/abstract}
