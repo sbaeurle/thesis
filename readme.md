@@ -12,19 +12,23 @@ Clone the repository using `git clone --recurse-submodules` ensuring the submodu
 
 ## How to build
 
+There are VS Code tasks for each build procedure.
+
 ### Using latexmk
 
-You can build this project using `latexmk` by executing `latexmk -pdf` or any other latexmk build command.
+build: `latexmk` or `latexmk -pdf`
+clean-up:
+
+* `latexmk -c` - remove all generated files except .pdf
+* `latexmk -C` - completly clean up repository
 
 ### Without latexmk
 
-Otherwise the project can be build using the `make.sh` script provided in the repository.
-The script accepts the following optional arguments:
+The project can build using the `make.sh` script provided in the repo:
 
-* `$1 desired pdf file name`
-* `$2 desired version tag`
-
-Executing the script will result in either `document.pdf` or `$1-$2.pdf`.
+* `./make.sh` - generates document.pdf
+* `./make.sh name` - generates name.pdf
+* `./make.sh name version` - generates name-version.pdf
 
 ## General Structure
 
