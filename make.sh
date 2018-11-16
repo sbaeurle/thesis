@@ -19,8 +19,8 @@ pdflatex -interaction nonstopmode document
 pdflatex -interaction nonstopmode document
 
 # rename document
-if [ -f document.pdf -a $NAME]; then
-	if [ -z "$VERSION"]; then
+if [ -f document.pdf -a $NAME ]; then
+	if [ -z "$VERSION" ]; then
 		mv document.pdf "$NAME.pdf"
 	else
 		mv document.pdf "$NAME-$VERSION.pdf" -f
