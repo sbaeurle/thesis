@@ -17,6 +17,7 @@ There are VS Code tasks for each build procedure.
 ### Using latexmk
 
 build: `latexmk` or `latexmk -pdf`
+
 clean-up:
 
 * `latexmk -c` - remove all generated files except .pdf
