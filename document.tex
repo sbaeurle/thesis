@@ -26,8 +26,10 @@
 
 	\newcounter{save}
 
-    \input{content/title_page.tex}
-    \newpage
+	\hypersetup{pageanchor=false}
+	\input{content/title_page.tex}
+	\hypersetup{pageanchor=true}
+	\newpage
     
     \pagenumbering{Roman}
 
