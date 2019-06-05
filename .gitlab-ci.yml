@@ -2,6 +2,9 @@
 # Official docker image.
 image: tianon/latex:latest
 
+stages:
+  - build
+  - cleanup
 build:
   stage: build
   script:
@@ -23,3 +26,8 @@ build_alternative:
     - document.log
     - document.synctex.gz
     expire_in: 1 week
+
+cleanup:
+  stage: cleanup
+  script:
+    - latexmc -C
