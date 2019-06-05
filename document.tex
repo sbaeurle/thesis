@@ -15,12 +15,12 @@
 	toc=bibliography
 ]{scrreprt}
 
-\input{shared-latex/packages}
+\input{config/packages}
 
 \usepackage[german]{babel}
 
-\input{shared-latex/person}
-\input{config}
+\input{config/person}
+\input{config/general}
 
 \begin{document}
 
@@ -34,10 +34,10 @@
     \pagenumbering{Roman}
 
 	% Hint: To be removed if no lock flag is needed.
-	\input{shared-latex/lock_flag}
+	\input{shared/lock_flag}
 	\newpage
 
-	\input{shared-latex/declaration_of_independence}
+	\input{shared/declaration_of_independence}
 	\newpage
     
 	\input{content/abstract}
