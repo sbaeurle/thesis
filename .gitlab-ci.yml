@@ -15,19 +15,3 @@ build:
     - document.log
     - document.synctex.gz
     expire_in: 1 week
-
-build_alternative:
-  stage: build
-  script:
-    - ./make.sh thesis
-  artifacts:
-    paths:
-    - document.pdf
-    - document.log
-    - document.synctex.gz
-    expire_in: 1 week
-
-cleanup:
-  stage: cleanup
-  script:
-    - latexmc -C
