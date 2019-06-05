@@ -23,5 +23,5 @@
     ],
     "cSpell.diagnosticLevel": "Hint",
     // docker integration of latex workshop
-    "latex-workshop.docker.enabled": true,
+    "latex-workshop.docker.enabled": true
 }

@@ -2,31 +2,35 @@
 
 This template is intended to be used as sleek and clean Latex Template to base your thesis or research project on.
 
-## How to fork
-
-Before forking the template, it is recommended to fork the shared-latex repository from [here](https://gitlab.com/sbaeurle/shared-latex.git).
-Adjust the shared repository as described there and head back here afterwards.
-
-Once finished, fork this repository and change the url of the shared-latex module to your personal fork.
-
-Clone the repository using `git clone --recurse-submodules` ensuring the submodules are cloned to.
-
 ## Getting started
 
-General personal and shared data is provided by your personal shared-latex submodule.
-Repository specific changes (such as new package imports) can be made without affecting other repositories.
-Head over to [Git Submodule Documentation](https://git-scm.com/book/en/v2/Git-Tools-Submodules) to find out more about submodules and how to use them.
+First, fork the repository into your own namespace.
+Head over to `config/` and replace the placeholders in `person.tex` and `general.tex` with your concrete data.
 
-`config.tex` contains several variables defining general stuff about your project (e.g. title, supervisor or date).
-Replace the placeholders and fill in your concrete data.
-
-Ensure your latex distribution and all needed packages are installed correctly by performing on of the described build procedures.
+Ensure your latex distribution and all needed packages are installed correctly by performing on of the described build procedures (or use the Docker Integration of Latex-Workshop).
 
 If the pdf is generated correctly you can start writing you project using the files in `content/`.
 
 ## How to build
 
-There are VS Code tasks defined per build procedure.
+These are the possibilites to build the Project.
+
+### Using Latex-Workshop
+
+Latex-Workshop uses `latexmk` to build the whole Project, whenever a file is saved.
+
+To overcome the need of a local Latex Installation, it is possible to use a Docker Container as Latex Environment.
+The Integration into Latex-Workshop can be enabled by:
+`"latex-workshop.docker.enabled": true`
+
+If you are using this approach, make sure to pre-pull `tianon/latex` from the Docker registry.
+
+### Using VS Code
+
+There are two VS Code Tasks defined to build the project:
+
+* `Build (latexmk)` - build using latexmk
+* `Build (script)` - build using `make.sh`
 
 ### Using latexmk
 
@@ -41,17 +45,19 @@ clean-up:
 
 The project can build using the `make.sh` script provided in the repo:
 
-* `./make.sh` - generates document.pdf
-* `./make.sh name` - generates name.pdf
-* `./make.sh name version` - generates name-version.pdf
+* `./scripts/make.sh` - generates document.pdf
+* `./scripts/make.sh name` - generates document.pdf and renames it to name.pdf
+* `./scripts/make.sh name version` - generates document.pdf and renames it to name-version.pdf
 
 ## General Structure
 
+* `.vscode` - configuration for vs code
+* `config/` - configuration of the project
 * `content/` - content of the project
 * `images/` - images of the project
-* `shared-latex/` - submodule containing shared latex files across multiple repositories
+* `shared/` - common latex files
+* `scripts/` - build and helper scripts
 * `.latexmkrc` - latexmk build definition
-* `config.tex` - config file for document
+* `.gitlab-ci.yaml` - pipeline definition
 * `document.tex` - main file including all other tex files
 * `literature.bib` - bibliography
-* `make.sh` - build script

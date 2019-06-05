@@ -6,7 +6,7 @@
         {
             "label": "Build (Script)",
             "type": "shell",
-            "command": "./make.sh",
+            "command": "./scripts/make.sh",
             "problemMatcher": []
         },
         {
