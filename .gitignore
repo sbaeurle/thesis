@@ -1,14 +1,22 @@
 # all possible temporary files
 *.aux
+*.acn
+*.acr
+*.alg
 *.bak
 *.bbl
 *.bcf
 *.blg
 *.fdb_latexmk
 *.fls
+*.glo
+*.glg
+*.gls
+*.ist
 *.lof
 *.log
 *.lot
+*.lol
 *.out
 *.pdf
 *.run.xml
