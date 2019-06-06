@@ -21,6 +21,9 @@
 
 \input{config/person}
 \input{config/general}
+\input{content/acronyms}
+
+\makeglossaries
 
 \begin{document}
 
@@ -47,17 +50,7 @@
 	
     \pdfbookmark{Inhaltsverzeichnis}{toc}\tableofcontents
     \cleardoublepage
-    
-    \listoffigures
-    \cleardoublepage
-    
-    \listoftables
-    \cleardoublepage
-    
-    % enable if you use code listings
-	%\lstlistoflistings
-	%\cleardoublepage
-    
+      
 	\setcounter{save}{\arabic{page}}
 	
 	\pagenumbering{arabic}    
@@ -69,9 +62,22 @@
     
     \pagenumbering{Roman}
     \setcounter{page}{\thesave}
-    
-    \printbibliography
+	
+	\addtocontents{toc}{\protect\renewcommand*{\protect\@pnumwidth}{3em}}
 
-	\clearpage
+	\listoffigures
+    \cleardoublepage
+    
+    \listoftables
+    \cleardoublepage
+
+	\lstlistoflistings
+	\cleardoublepage
+
+	\printglossary[type=\acronymtype,style=super]
+	\cleardoublepage
+
+    \printbibliography
+	\cleardoublepage
 	
 \end{document}
