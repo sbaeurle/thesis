@@ -5,7 +5,7 @@ image: registry.gitlab.com/latex-template/docker
 build:
   stage: build
   script:
-    - latexmk -synctex=1 -pdflatex='pdflatex -draftmode %O %S && touch %D' -interaction=batchmode -halt-on-error -file-line-error -pdf document
+    - latexmk -synctex=1 -interaction=batchmode -d -halt-on-error -file-line-error -pdf document
   artifacts:
     paths:
     - document.pdf
