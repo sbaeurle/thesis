@@ -12,6 +12,8 @@
         "*.fdb_latexmk": true,
         "*.fls": true,
         "*.glo": true,
+        "*.glg": true,
+        "*.gls": true,
         "*.ist": true,
         "*.lof": true,
         "*.lot": true,
