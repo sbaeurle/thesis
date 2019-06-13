@@ -17,13 +17,15 @@
 
 \input{config/packages}
 
-\usepackage[german]{babel}
+\usepackage[ngerman]{babel}
 
-\input{config/person}
-\input{config/general}
-\input{content/acronyms}
+\input{config/information}
+\input{config/header}
 
 \makeglossaries
+\input{content/acronyms}
+\input{content/glossary}
+
 
 \begin{document}
 
@@ -74,7 +76,10 @@
 	\lstlistoflistings
 	\cleardoublepage
 
-	\printglossary[type=\acronymtype,style=super]
+	\printglossary[style=altlist,title=Glossar]
+	\cleardoublepage
+
+	\printglossary[type=\acronymtype,style=super,title=Akronyme]
 	\cleardoublepage
 
     \printbibliography
