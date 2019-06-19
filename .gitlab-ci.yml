@@ -16,6 +16,16 @@ build:
     refs:
       - master
 
+build_chapter:
+  stage: build
+  script:
+    - cd sections
+    - find . -name '*.tex' -exec latexmk -interaction=nonstopmode -file-line-error -pdf {} \;
+  artifacts:
+    paths:
+      - sections/*.pdf
+    expire_in: 1 week
+
 build_release:
   stage: build
   script:
