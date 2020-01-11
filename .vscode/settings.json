@@ -30,7 +30,5 @@
     "cSpell.enabledLanguageIds": [
         "latex" // add support for more file formats here
     ],
-    "cSpell.diagnosticLevel": "Hint",
-    // docker integration of latex workshop
-    "latex-workshop.docker.enabled": true
+    "cSpell.diagnosticLevel": "Hint"
 }

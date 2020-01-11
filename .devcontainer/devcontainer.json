@@ -1,0 +1,10 @@
+{
+    "name": "latex",
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "James-Yu.latex-workshop",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-german",
+        "eamodio.gitlens"
+    ]
+}
