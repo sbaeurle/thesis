@@ -7,21 +7,23 @@
             "label": "Build (Script)",
             "type": "shell",
             "command": "./scripts/make.sh",
-            "problemMatcher": []
+            "group": "build"
         },
         {
             "label": "Build (Latexmk)",
             "type": "shell",
             "command": "latexmk",
             "args": [
-                "latexmk",
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
                 "-pdf",
                 "document"
             ],
-            "problemMatcher": []
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

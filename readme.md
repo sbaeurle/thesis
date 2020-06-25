@@ -4,12 +4,13 @@ This template is intended to be used as sleek and clean Latex Template to base y
 
 ## Getting started
 
-First, fork the repository into your own namespace.
-Head over to `config/` and replace the placeholders in `person.tex` and `general.tex` with your concrete data.
+1. Fork repository into your own namespace. (GitLab preferred to support CI capabilities)
+2. Replace placeholders in `config/person.tex` and `config/general.tex` with concrete values.
+3. Replace logos in `images/` with the logo of your company and university.
 
-Ensure your latex distribution and all needed packages are installed correctly by performing on of the described build procedures (or use the Docker Integration of Latex-Workshop).
+**Important**: Ensure your latex distribution and all needed packages are installed correctly by performing on of the described build procedures (alternatively use VS Code Remote Development).
 
-If the pdf is generated correctly you can start writing you project using the files in `content/`.
+If the pdf is generated correctly you can start writing chapters as seen in `sections/01-introduction.tex`.
 
 ## How to build
 
@@ -19,18 +20,14 @@ These are the possibilites to build the Project.
 
 Latex-Workshop uses `latexmk` to build the whole Project, whenever a file is saved.
 
-To overcome the need of a local Latex Installation, it is possible to use a Docker Container as Latex Environment.
-The Integration into Latex-Workshop can be enabled by:
-`"latex-workshop.docker.enabled": true`
+To ease the installation of LaTeX, the repository comes with a provided `.devcontainer` configuration for VS Code Remote.
 
-If you are using this approach, make sure to pre-pull `tianon/latex` from the Docker registry.
-
-### Using VS Code
+### Using VS Code Tasks
 
 There are two VS Code Tasks defined to build the project:
 
 * `Build (latexmk)` - build using latexmk
-* `Build (script)` - build using `make.sh`
+* `Build (script)` - build using `scripts/make.sh`
 
 ### Using latexmk
 
@@ -41,7 +38,7 @@ clean-up:
 * `latexmk -c` - remove all generated files except .pdf
 * `latexmk -C` - completly clean up repository
 
-### Without latexmk
+### Using build script
 
 The project can build using the `make.sh` script provided in the repo:
 
@@ -51,13 +48,23 @@ The project can build using the `make.sh` script provided in the repo:
 
 ## General Structure
 
-* `.vscode` - configuration for vs code
+* `.devcontainer/` - configuration for vs code remote development
+* `.vscode/` - configuration for vs code
 * `config/` - configuration of the project
-* `content/` - content of the project
+* `sections/` - sections of the thesis/project
 * `images/` - images of the project
 * `shared/` - common latex files
 * `scripts/` - build and helper scripts
 * `.latexmkrc` - latexmk build definition
-* `.gitlab-ci.yaml` - pipeline definition
+* `.gitlab-ci.yaml` - gitlab pipeline definition
 * `document.tex` - main file including all other tex files
 * `literature.bib` - bibliography
+
+## Helper scripts
+
+### svg2pdf
+
+This script automatically converts vector images in `svg` format to `pdf` format.
+It requires `inkscape` to be installed in order to function.
+
+Usage: `./scripts/svg2pdf.sh images` - scans images folder for svg files and converts them to similary named pdf files.

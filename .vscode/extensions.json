@@ -1,6 +1,10 @@
 {
     "recommendations": [
         "eamodio.gitlens",
-        "coenraads.bracket-pair-colorizer-2"
+        "coenraads.bracket-pair-colorizer-2",
+        "James-Yu.latex-workshop",
+        "streetsidesoftware.code-spell-checker",
+        "streetsidesoftware.code-spell-checker-german",
+        "eamodio.gitlens"
     ]
 }

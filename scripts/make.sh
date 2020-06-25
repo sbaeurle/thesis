@@ -3,8 +3,6 @@
 # $1 - output file name (optinal)
 # $2 - version (optional)
 
-cd "$(dirname "$0")"
-
 WRKDIR=`pwd`
 
 NAME=$1
